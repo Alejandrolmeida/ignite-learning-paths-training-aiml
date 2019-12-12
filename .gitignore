@@ -335,3 +335,5 @@ ASALocalRun/
 # Mac image previews
 .DS_Store
 aiml50/source/seer_pipeline.ipynb
+aiml50/source/azureml-config.json
+aiml50/source/deploymentconfig.json
