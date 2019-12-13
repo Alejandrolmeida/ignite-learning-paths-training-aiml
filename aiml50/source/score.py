@@ -66,7 +66,7 @@ def run(raw_data):
     t = tf.reshape(tensor, [-1, image_size, image_size, 3])
 
     # predict with model (there's only one)
-    pred = model.predict(t, steps=1)[0]
+    pred = model.predict(t, steps=2)[1]
     print(pred)
 
     current_time = time.time()
@@ -79,8 +79,7 @@ def run(raw_data):
     payload = {
         'time': str(inference_time.total_seconds()),
         'prediction': categories[int(np.argmax(pred))],
-        'scores': predictions,
-        'pred': pred
+        'scores': predictions
     }
 
     print('Input ({}),\nPrediction ({})'.format(post['image'], payload))
